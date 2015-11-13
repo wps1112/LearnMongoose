@@ -1,0 +1,15 @@
+//
+   Created by He on 2015/11/13.
+
+extends layout
+
+block content
+   form(method='post')
+      div.form-group
+         label(for='username') 用户名
+         input.form-control(name='username',type='text',placeholder='用户名',id='username')
+      div.form-group
+         label(for='useremail') email
+         input.form-control(name='useremail',type='text',placeholder='email',id='useremail')
+      button.btn.btn-default(type='submit') 注册
+
