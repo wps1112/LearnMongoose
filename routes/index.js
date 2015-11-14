@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
      res.render('index', { title: 'Express' });
 });
 
-router.post('/add', function(req, res) {
+router.post('/Login', function (req, res) {
     console.log('获取post请求');
     var _name=req.body.username;
     var _email=req.body.useremail;
@@ -35,8 +35,8 @@ router.post('/add', function(req, res) {
 
 });
 
-router.get('/add', function(req, res) {
+router.get('/Login', function (req, res) {
 
-  res.render('add', { title: 'add' });
+    res.render('Login', {title: 'Login'});
 });
 module.exports = router;
