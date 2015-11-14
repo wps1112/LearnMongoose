@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de56c216-ffd2-4672-a817-004e1ad6099a" name="Default" comment="学习引入百度地图">
+    <list default="true" id="de56c216-ffd2-4672-a817-004e1ad6099a" name="Default" comment="添加公告栏的实现，目前还需要对数据模型进行更改。增加后台的管理功能">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Login.jade" afterPath="$PROJECT_DIR$/views/Login.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/lbs.js" afterPath="$PROJECT_DIR$/public/js/lbs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -141,6 +141,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="wps1112" />
         <option value="He" />
       </list>
     </option>
@@ -454,7 +455,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447515742485</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加公告栏的实现，目前还需要对数据模型进行更改。增加后台的管理功能">
+      <created>1447515811876</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1447515811876</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -493,9 +500,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加公告栏的实现，目前还需要对数据模型进行更改。增加后台的管理功能" />
     <MESSAGE value="学习引入百度地图" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习引入百度地图" />
+    <MESSAGE value="添加公告栏的实现，目前还需要对数据模型进行更改。增加后台的管理功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加公告栏的实现，目前还需要对数据模型进行更改。增加后台的管理功能" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
