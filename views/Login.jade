@@ -9,13 +9,19 @@ block content
          div.panel.panel-info
             div.panel-heading 通知
             div.panel-body
+               ol
+                  each val in data
+                     li
+                        a(href="#")=val.name
+                        small.pull-right=val.time
+
       div.row
          div.col-xs-3
             div.panel.panel-info
                div.panel-heading 登陆
                div.panel-body
                   form.form-signin
-                     h2.form-signin-heading 登陆
+                     h2.form-signin-heading
                         label.sr-only(for='inputEmail') Email address
                         input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='')
                         label.sr-only(for='inputPassword') Password
@@ -23,8 +29,8 @@ block content
                         .checkbox
                            label
                               input(type='checkbox', value='remember-me')
-                              |  Remember me
-                        button.btn.btn-primary.btn-block(type='submit') Sign in
+                              | Rember me
+                        button.btn.btn-primary.btn-block(type='submit') 登陆
 
 
 

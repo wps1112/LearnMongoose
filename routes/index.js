@@ -3,12 +3,16 @@ var router = express.Router();
 var mongoose=require('mongoose');
 
 mongoose.connect('mongodb://localhost/test');
-var model=require('../model/user');
-var User=model.User;
+var userModel = require('../model/user');
+var User = userModel.User;
+
+var messageModel = require('../model/Message')
+var Message = messageModel.Message;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-     res.render('index', { title: 'Express' });
+
+    res.render('index', {title: 'fdfdf'});
 });
 
 router.post('/Login', function (req, res) {
@@ -36,7 +40,18 @@ router.post('/Login', function (req, res) {
 });
 
 router.get('/Login', function (req, res) {
+    Message.find({}, function (err, docs) {
+            if (err) {
+                console.error("erro");
+            }
+            else {
+                console.log(docs);
+                res.render('Login', {
+                    data: docs
+                });
+            }
+        }
+    ).limit(4);
 
-    res.render('Login', {title: 'Login'});
 });
 module.exports = router;
