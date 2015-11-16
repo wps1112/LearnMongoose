@@ -3,7 +3,7 @@
  */
 var mongoose = require('mongoose');
 var _messageSchema = new mongoose.Schema({
-    name: String,
+    content: String,
     time: String
 });
 

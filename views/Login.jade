@@ -4,33 +4,55 @@
 extends layout
 
 block content
-   div.row
-      div.col-md-8
-         div.panel.panel-info
-            div.panel-heading 通知
-            div.panel-body
-               ol
-                  each val in data
-                     li
-                        a(href="#")=val.name
-                        small.pull-right=val.time
+   script(type='text/javascript',src='/js/bootstrap.min.js')
+   div.container
+      div.col-md-11.col-md-offset-1
+         #myCarousel.carousel.slide
+            ol.carousel-indicators
+               li.active(data-target='#myCarousel', data-slide-to='0')
+               li(data-target='#myCarousel', data-slide-to='1')
+               li(data-target='#myCarousel', data-slide-to='2')
+            .carousel-inner
+               .item.active
+                  img(src='/images/bootstrap-mdo-sfmoma-01.jpg', alt='First slide')
+               .item
+                  img(src='/images/bootstrap-mdo-sfmoma-02.jpg', alt='Second slide')
+               .item
+                  img(src='/images/bootstrap-mdo-sfmoma-03.jpg', alt='Third slide')
+            // 轮播（Carousel）导航
+            a.carousel-control.left(href='#myCarousel', data-slide='prev') ‹
+            a.carousel-control.right(href='#myCarousel', data-slide='next') ›
 
-      div.row
-         div.col-xs-3
-            div.panel.panel-info
-               div.panel-heading 登陆
-               div.panel-body
-                  form.form-signin
-                     h2.form-signin-heading
-                        label.sr-only(for='inputEmail') Email address
-                        input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='')
-                        label.sr-only(for='inputPassword') Password
-                        input#inputPassword.form-control(type='password', placeholder='Password', required='')
-                        .checkbox
-                           label
-                              input(type='checkbox', value='remember-me')
-                              | Rember me
-                        button.btn.btn-primary.btn-block(type='submit') 登陆
+
+         div.row(style='padding-top:10px')
+            div.col-xs-8
+               div.panel.panel-info(id="tongzhi")
+                  div.panel-heading 通知
+                  div.panel-body
+                     ol
+                        each val in data
+                           li
+                              a(href="#")=val.content
+                              small.pull-right=val.time
+            div.row
+               div.col-xs-4
+                  div.panel.panel-info(id='login')
+                     div.panel-heading 登陆
+                     div.panel-body
+                        form.form-signin
+                           h2.form-signin-heading
+                              label.sr-only(for='inputEmail') Email address
+                              input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='')
+                              label.sr-only(for='inputPassword') Password
+                              input#inputPassword.form-control(type='password', placeholder='Password', required='')
+                              .checkbox
+                                 label
+                                    input(type='checkbox', value='remember-pswd')
+                                    | 记住密码
+                                 label.pull-right
+                                    input(type='checkbox', value='auto-login')
+                                    | 自动登陆
+                              button.btn.btn-primary.btn-block(type='submit') 登陆
 
 
 
