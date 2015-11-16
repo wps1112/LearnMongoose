@@ -8,17 +8,21 @@
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=1hZ5gqOxBT8B5clwusZqwsO5"></script>
   </head>
   <body>
-    <!--div.container-fluid-->
-    <!--   nav.navbar.navbar-inverse.navbar-fixed-top-->
-    <!--     div.navbar-header-->
-    <!--      a.navbar-brand 分理级服务平台-->
     <!--script(type='text/javascript')-->
     <!--  | var map = new BMap.Map("allmap");-->
     <!--  | map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);-->
     <!--  | map.addControl(new BMap.MapTypeControl());-->
     <!--  | map.setCurrentCity("北京");-->
     <!--  | map.enableScrollWheelZoom(true);-->
-    <div id="allmap"></div>
     <script type="text/javascript" src="/js/lbs.js"></script>
+    <div class="container-fluid">
+      <nav id="mynavbar" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header"><a class="navbar-brand">分理级服务平台</a></div>
+      </nav>
+    </div>
+    <div class="left"></div>
+    <div class="right_mapDiv">
+      <div id="allmap"></div>
+    </div>
   </body>
 </html>

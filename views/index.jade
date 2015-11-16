@@ -1,4 +1,10 @@
 extends layout
 block content
-    div(id='allmap')
     script(type='text/javascript',src='/js/lbs.js')
+    div.container-fluid
+        nav.navbar.navbar-inverse.navbar-fixed-top(id='mynavbar')
+            div.navbar-header
+                a.navbar-brand 分理级服务平台
+    div.left
+    div.right_mapDiv
+        div(id='allmap')
