@@ -28,19 +28,29 @@ body, html, #allmap {
 }
 
 .left {
-    position: absolute;
+
     top: 44px;
     left: 0;
     bottom: 0;
-    width: 350px;
+    width: 20%;
     background-color: #FFF;
     border-right: 1px solid #C8C8C8;
 }
 
-.right_mapDiv {
-    position: absolute;
+.right {
+    position: fixed;
+    float: left;
     top: 44px;
     bottom: 0;
     right: 0;
     left: 352px;
+    display: block;
+}
+
+#shensuo {
+    margin-top: 400px;
+    width: 10px;
+    height: 50px;
+    background-color: #000;
+    display: block;
 }

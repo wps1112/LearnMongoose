@@ -11,9 +11,9 @@ var Message = messageModel.Message;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-    res.render('index', {title: 'fdfdf'});
+    res.render('index', {title: '河南北斗分理级服务平台'});
 });
+
 
 router.post('/Login', function (req, res) {
     console.log('获取post请求');
