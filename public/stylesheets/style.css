@@ -28,14 +28,14 @@ body, tt, html, #allmap {
 }
 
 .left {
-
+    position: fixed;
     top: 44px;
     left: 0;
     bottom: 0;
     width: 20%;
     background-color: #FFF;
     border-right: 1px solid #C8C8C8;
-    display: none;
+    display: block;
 }
 
 .right, #right {
@@ -50,4 +50,8 @@ body, tt, html, #allmap {
 
 #shensuo {
     display: block;
+}
+
+#accordion {
+
 }
