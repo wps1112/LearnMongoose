@@ -36,15 +36,15 @@ block content
                               small.pull-right=val.time
             div.row
                div.col-xs-4
-                  div.panel.panel-info(id='login')
+                  div.panel.panel-info
                      div.panel-heading 登陆
                      div.panel-body
-                        form.form-signin
+                        form.form-signin(method='post')
                            h2.form-signin-heading
-                              label.sr-only(for='inputEmail') Email address
-                              input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='')
-                              label.sr-only(for='inputPassword') Password
-                              input#inputPassword.form-control(type='password', placeholder='Password', required='')
+                              label.sr-only(for='useremail') Email address
+                              input#useremail.form-control(type='email',name='useremail',placeholder='Email address', required='', autofocus='')
+                              label.sr-only(for='userpassword') Password
+                              input#userpassword.form-control(type='password',name='userpassword',placeholder='Password', required='')
                               .checkbox
                                  label
                                     input(type='checkbox', value='remember-pswd')

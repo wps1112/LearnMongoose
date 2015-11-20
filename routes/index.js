@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose=require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 
 mongoose.connect('mongodb://localhost/test');
 var userModel = require('../model/user');
@@ -14,28 +15,51 @@ router.get('/', function(req, res, next) {
     res.render('index', {title: '河南北斗分理级服务平台'});
 });
 
+router.get('/admin', function (req, res, next) {
+    res.render('/admin', {title: '河南北斗分理级服务平台'});
+});
+
 
 router.post('/Login', function (req, res) {
     console.log('获取post请求');
-    var _name=req.body.username;
     var _email=req.body.useremail;
+    var _password = req.body.userpassword;
     var _user=new User({
-        name:_name,
-        email:_email
+        email: _email,
+        password: _password
         });
-  _user.save(function(err){
-        if(err)
-        {
-          console.log(err);
-            res.render('/add', { title: 'add' });
-           }
-        else
-        {  res.redirect('index', { title: 'home' });
-          console.log('saved OK!');
-        }
-    }
 
-  )
+    var salt = bcrypt.genSalt(10, function (err, salt) {
+        if (err) {
+            console.log(err);
+            return nexr(err)
+        }
+        else {
+            console.log(salt);
+            return salt;
+        }
+    });
+
+    bcrypt.hash(_user.password, salt, null, function (err, hash) {
+        if (err) {
+            return next(err);
+        }
+        _user.password = hash;
+        console.log(_user.password);
+    });
+
+    _user.save(function (err) {
+        if (err) {
+            console.log(err);
+            res.render('/Login', {title: 'Login'});
+        }
+        else {
+            //res.render('/Login', { title: 'Login' });
+            console.log('saved OK!');
+
+        }
+
+    });
 
 });
 
@@ -54,4 +78,5 @@ router.get('/Login', function (req, res) {
     ).limit(8);
 
 });
+
 module.exports = router;

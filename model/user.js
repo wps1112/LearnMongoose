@@ -4,8 +4,8 @@
 var mongoose=require('mongoose');
 
 var _userSchema=new mongoose.Schema({
-    name:String,
-    email:String
+    email: String,
+    password: String
 });
 
 exports.User=mongoose.model('User',_userSchema);
