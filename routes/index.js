@@ -7,7 +7,7 @@ mongoose.connect('mongodb://localhost/test');
 var userModel = require('../model/user');
 var User = userModel.User;
 
-var messageModel = require('../model/Message')
+var messageModel = require('../model/Message');
 var Message = messageModel.Message;
 
 /* GET home page. */
@@ -21,7 +21,8 @@ router.get('/admin', function (req, res, next) {
 
 
 router.post('/Login', function (req, res) {
-    console.log('获取post请求');
+
+    //'获取post请求'
     var _email=req.body.useremail;
     var _password = req.body.userpassword;
     var _user=new User({
@@ -29,6 +30,7 @@ router.post('/Login', function (req, res) {
         password: _password
         });
 
+    //生成盐
     var salt = bcrypt.genSalt(10, function (err, salt) {
         if (err) {
             console.log(err);
@@ -40,6 +42,7 @@ router.post('/Login', function (req, res) {
         }
     });
 
+    //hash散列
     bcrypt.hash(_user.password, salt, null, function (err, hash) {
         if (err) {
             return next(err);
@@ -48,6 +51,7 @@ router.post('/Login', function (req, res) {
         console.log(_user.password);
     });
 
+    //调用数据库模型的方法。
     _user.save(function (err) {
         if (err) {
             console.log(err);
