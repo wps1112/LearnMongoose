@@ -4,8 +4,20 @@
     <title></title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <!--if IE 7alink(rel='stylesheet', href='assets/css/font-awesome-ie7.min.css')
+    -->
+    <!-- page specific plugin styles-->
+    <!-- fonts-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
+    <!-- ace styles-->
+    <link rel="stylesheet" href="/assets/css/ace.min.css">
+    <link rel="stylesheet" href="/assets/css/ace-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/ace-skins.min.css">
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=1hZ5gqOxBT8B5clwusZqwsO5"></script>
+    <!--admin相关的css-->
+    <script src="/assets/js/ace-extra.min.js"></script>
   </head>
   <body>
     <script type="text/javascript" src="/js/lbs.js"></script>
@@ -14,19 +26,23 @@
     <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <div class="container-fluid">
       <nav id="mynavbar" class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-header"><a class="navbar-brand">河南北斗分理级服务平台</a></div>
+        <div class="navbar-header"><a class="navbar-brand">北斗分理级服务平台</a></div>
       </nav>
     </div>
     <div id="shensuo"></div>
     <div id="left" class="left">
       <div id="accordion">
-        <h3>部分 1</h3>
+        <h3>北斗民用服务平台简介</h3>
         <div>
           <p>
-            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+            北斗民用服务平台（以下简称“平台”）是通过开发相应的软件功能模块，配合相关的设备和数据信道，利用北斗卫星定位系
+            统、互联网、移动通信网络等资源，融合多项信息处理技术，自主构建的能为不同用户提供基于位置的信息共享、北斗短报
+            文信息转发、数据传送、远程测控以及各类信息增值服务的运营系统。平台的IT系统按照“结构化设计”方案搭建，并配置了
+            专业的安全防护软件，具备7×24小时的对外服务能力。
+            平台由北斗运营服务平台、北斗行业应用平台、开放平台三部分构成，不仅能确保基础运营服务的稳定可用，数据存储传输
+            的安全可靠；还具备数据传输及通讯的中转服务功能，实现北斗与其他通讯系统的互联互通，并提供多种增值服务订阅及个
+            性化功能定制服务；更为重要的是用户可直接使用现成的行业应用系统，并利用开放的编程接口进行二次开发，从而减少投
+            入，节约成本，缩短开发时间，快速搭建满足自身需求的专属服务系统。
           </p>
         </div>
         <h3>部分 2</h3>
@@ -67,13 +83,12 @@
           </p>
         </div>
       </div>
+      <script>
+        $(function () {
+          $("#accordion").accordion();
+        });
+      </script>
     </div>
-    <script>
-      $(function () {
-        $("#accordion").accordion();
-      });
-
-    </script>
     <div id="right" class="right">
       <div id="allmap"></div>
     </div>

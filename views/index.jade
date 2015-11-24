@@ -8,17 +8,22 @@ block content
     div.container-fluid
         nav.navbar.navbar-inverse.navbar-fixed-top(id='mynavbar')
             div.navbar-header
-                a.navbar-brand 河南北斗分理级服务平台
+                a.navbar-brand 北斗分理级服务平台
+
     div(id='shensuo')
     div.left(id='left')
         #accordion
-            h3 部分 1
+            h3 北斗民用服务平台简介
             div
                 p
-                    | Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                    | ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                    | amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                    | odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                    | 北斗民用服务平台（以下简称“平台”）是通过开发相应的软件功能模块，配合相关的设备和数据信道，利用北斗卫星定位系
+                    | 统、互联网、移动通信网络等资源，融合多项信息处理技术，自主构建的能为不同用户提供基于位置的信息共享、北斗短报
+                    | 文信息转发、数据传送、远程测控以及各类信息增值服务的运营系统。平台的IT系统按照“结构化设计”方案搭建，并配置了
+                    | 专业的安全防护软件，具备7×24小时的对外服务能力。
+                    | 平台由北斗运营服务平台、北斗行业应用平台、开放平台三部分构成，不仅能确保基础运营服务的稳定可用，数据存储传输
+                    | 的安全可靠；还具备数据传输及通讯的中转服务功能，实现北斗与其他通讯系统的互联互通，并提供多种增值服务订阅及个
+                    | 性化功能定制服务；更为重要的是用户可直接使用现成的行业应用系统，并利用开放的编程接口进行二次开发，从而减少投
+                    | 入，节约成本，缩短开发时间，快速搭建满足自身需求的专属服务系统。
             h3 部分 2
             div
                 p
@@ -48,10 +53,9 @@ block content
                     | Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
                     | Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
                     | inceptos himenaeos.
-    script.
-        $(function () {
-            $("#accordion").accordion();
-        });
-
-    div.right(id='right')
-        div(id='allmap')
+        script.
+            $(function () {
+                $("#accordion").accordion();
+            });
+    div.right(id = 'right')
+        div(id = 'allmap')

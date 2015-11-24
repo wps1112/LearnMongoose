@@ -4,6 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+//加载session支持会话处理
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var settings = require('./config').dbInfo;
+
+var flash = require('connect-flash');
 
 //加载路由模块
 var routes = require('./routes/index');
@@ -23,17 +29,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+//添加跳转功能
+app.use(flash());
+
+
 //指定静态资源加载路径
 app.use(express.static(path.join(__dirname, 'public')));
+
+//会话机制
 
 app.use('/', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  //var err = new Error('Not Found');
+  //err.status = 404;
+  //next(err);
+  res.render("404");
+
 });
 
 // error handlers

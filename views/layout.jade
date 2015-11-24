@@ -2,10 +2,24 @@ doctype html
 html
   head
     title= title
+
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet',href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/assets/css/font-awesome.min.css')
+    //if IE 7a
+         link(rel='stylesheet', href='assets/css/font-awesome-ie7.min.css')
+    // page specific plugin styles
+    // fonts
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400,300')
+    // ace styles
+    link(rel='stylesheet', href='/assets/css/ace.min.css')
+    link(rel='stylesheet', href='/assets/css/ace-rtl.min.css')
+    link(rel='stylesheet', href='/assets/css/ace-skins.min.css')
+
     script(type="text/javascript",src="/js/jquery.min.js")
     script(type="text/javascript",src="http://api.map.baidu.com/api?v=2.0&ak=1hZ5gqOxBT8B5clwusZqwsO5")
+    //admin相关的css
+    script(src='/assets/js/ace-extra.min.js')
 
   body
 
