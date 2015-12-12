@@ -1,0 +1,23 @@
+//
+   Created by pc on 2015/12/12.
+
+extends layout
+block content
+    script(type='text/javascript',src='/js/bootstrap.min.js')
+    div.container
+        div.row
+            div.col-xs-12
+                div.panel.panel-info
+                    div.panel-heading 注册
+                    div.panel-body
+                        form.form-signin(method='post')
+                            h2.form-signin-heading
+                                label.sr-only(for='useremail') 用户名
+                                input#useremail.form-control(type='email',name='useremail',placeholder='Email address', required='', autofocus='')
+                                label.sr-only(for='userpassword') 密码
+                                input#userpassword.form-control(type='password',name='userpassword',placeholder='Password', required='')
+                                label.sr-only(for='userpassword-repeat') 密码
+                                input#userpassword.form-control(type='password',name='userpassword-repeat',placeholder='Password', required='')
+
+                                button.btn.btn-primary.btn-block(type='submit') 注册
+                                button.btn.btn-primary.btn-block(type='submit') 取消

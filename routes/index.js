@@ -51,14 +51,46 @@ router.get('/admin', function (req, res, next) {
 
 
 router.post('/Login', function (req, res) {
+    var user = {
+        username: '569456351@qq.com',
+        password: '123456'
+    }
+    if (req.body.useremail === user.username && req.body.userpassword === user.password) {
+        res.redirect('/');
+    }
+    res.redirect('/Login');
 
-    //'获取post请求'
+});
+
+router.get('/Login', function (req, res) {
+    Message.find({}, function (err, docs) {
+            if (err) {
+                console.error("erro");
+            }
+            else {
+                console.log(docs);
+                res.render('Login', {
+                    data: docs
+                });
+            }
+        }
+    ).limit(8);
+
+});
+
+router.get('/reg', function (req, res) {
+    res.render('reg', {title: '注册界面'});
+});
+
+router.post('/reg', function (req, res) {
+    //注册功能
+    //'获取post请求'表单数据
     var _email=req.body.useremail;
     var _password = req.body.userpassword;
     var _user=new User({
         email: _email,
         password: _password
-        });
+    });
 
     //生成盐
     var salt = bcrypt.genSalt(10, function (err, salt) {
@@ -100,20 +132,5 @@ router.post('/Login', function (req, res) {
 
 });
 
-router.get('/Login', function (req, res) {
-    Message.find({}, function (err, docs) {
-            if (err) {
-                console.error("erro");
-            }
-            else {
-                console.log(docs);
-                res.render('Login', {
-                    data: docs
-                });
-            }
-        }
-    ).limit(8);
-
-});
 
 module.exports = router;

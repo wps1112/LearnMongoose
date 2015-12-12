@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var settings = require('./config').dbInfo;
-
+var db = require('');
 var flash = require('connect-flash');
 
 //加载路由模块
@@ -29,6 +29,23 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(session({
+  cookie: {maxAge: 600000},
+  secret: settings.COOKIE_SECRET,
+  store: new MongoStore({
+    username: settings.USERNAME,
+    password: settings.PASSWORD,
+    url: settings.URL,
+    db: db
+  })
+}))
+
+app.use(function (req, res, next) {
+  res.locals.user = req.session.user;
+  next();
+});
+
+
 //添加跳转功能
 app.use(flash());
 
@@ -37,7 +54,6 @@ app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //会话机制
-
 app.use('/', routes);
 app.use('/users', users);
 

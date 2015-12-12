@@ -11,10 +11,13 @@ module.exports = {
     }
     ,
     "dbInfo": {
-        cookieSecret: 'HNBD',
-        db: 'test',
-        host: 'localhost',
-        port: 27017
+        COOKIE_SECRET: 'ywang1724.com',
+        URL: 'mongodb://127.0.0.1:27017/nodedb',
+        DB: 'test',
+        HOST: '127.0.0.1',
+        PORT: 27017,
+        USERNAME: 'admin',
+        PASSWORD: '123456'
 
     }
 }
