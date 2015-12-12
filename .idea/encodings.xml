@@ -9,5 +9,6 @@
     <file url="file://$PROJECT_DIR$/views/admin.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/index.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layout.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/reg.jade" charset="UTF-8" />
   </component>
 </project>
