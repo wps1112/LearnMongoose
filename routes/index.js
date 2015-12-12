@@ -15,8 +15,15 @@ var Message = messageModel.Message;
 
 
 /* GET home page. */
+//session机制。当访问index页面时，先判断是否登陆过。
 router.get('/', function(req, res, next) {
-    res.render('index', {title: '河南北斗分理级服务平台'});
+    if (req.session.user) {
+        res.render('index');
+    } else {
+        req.session.error = "请先登录";
+        res.redirect('login');
+    }
+
 });
 
 
@@ -56,6 +63,7 @@ router.post('/Login', function (req, res) {
         password: '123456'
     }
     if (req.body.useremail === user.username && req.body.userpassword === user.password) {
+        req.session.user = user;
         res.redirect('/');
     }
     res.redirect('/Login');
@@ -63,6 +71,7 @@ router.post('/Login', function (req, res) {
 });
 
 router.get('/Login', function (req, res) {
+
     Message.find({}, function (err, docs) {
             if (err) {
                 console.error("erro");

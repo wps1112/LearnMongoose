@@ -1,14 +1,16 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
+
 var bodyParser = require('body-parser');
 //加载session支持会话处理
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+
+
 var settings = require('./config').dbInfo;
-var db = require('');
 var flash = require('connect-flash');
 
 //加载路由模块
@@ -29,19 +31,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
 app.use(session({
-  cookie: {maxAge: 600000},
-  secret: settings.COOKIE_SECRET,
-  store: new MongoStore({
-    username: settings.USERNAME,
-    password: settings.PASSWORD,
-    url: settings.URL,
-    db: db
-  })
-}))
+      resave: false,
+      saveUninitialized: true,
+      secret: settings.COOKIE_SECRET,
+      store: new MongoStore({   //创建新的mongodb数据库
+        url: settings.url,
+        collection: 'sessions',
+        saveUninitialized: true
+      })
+    })
+);
 
 app.use(function (req, res, next) {
   res.locals.user = req.session.user;
+  console.log('Session is = ', req.session.user);
   next();
 });
 

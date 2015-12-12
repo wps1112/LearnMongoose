@@ -8,16 +8,11 @@ module.exports = {
         "user": '569456351@qq.com',
         "password": 'wps1112',
         "toUser": '569456351@qq.com'
-    }
-    ,
+    },
     "dbInfo": {
-        COOKIE_SECRET: 'ywang1724.com',
-        URL: 'mongodb://127.0.0.1:27017/nodedb',
-        DB: 'test',
-        HOST: '127.0.0.1',
-        PORT: 27017,
-        USERNAME: 'admin',
-        PASSWORD: '123456'
-
+        COOKIE_SECRET: 'hnbd',
+        host: 'localhost',
+        db: 'test',
+        url: 'mongodb://localhost/test'
     }
 }

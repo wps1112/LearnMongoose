@@ -8,4 +8,5 @@ var _userSchema=new mongoose.Schema({
     password: String
 });
 
+
 exports.User=mongoose.model('User',_userSchema);
