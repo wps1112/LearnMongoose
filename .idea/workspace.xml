@@ -582,7 +582,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449912612604</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="添加nodemailer发送email功能">
+      <created>1449912624458</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1449912624458</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
