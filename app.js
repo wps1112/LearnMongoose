@@ -3,6 +3,7 @@ var cookieParser = require('cookie-parser');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var multer = require('multer');
 
 var bodyParser = require('body-parser');
 //加载session支持会话处理
@@ -31,6 +32,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(multer({
+    dest: './uploads/',
+    rename: function (fieldname, filename) {
+        return filename.replace(/\W+/g, '-').toLowerCase() + Date.now()
+    }
+}));
 
 app.use(session({
       resave: false,

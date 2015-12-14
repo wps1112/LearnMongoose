@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var mongoose=require('mongoose');
+
 var bcrypt = require('bcrypt-nodejs');
 var dbInfo = require('../config').dbInfo;
-mongoose.connect('mongodb://' + dbInfo.host + '/' + dbInfo.db);
+mongoose.connect(dbInfo.url);
 
 //发送邮件
 var nodemailer = require("nodemailer");
