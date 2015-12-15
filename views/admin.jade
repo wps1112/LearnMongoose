@@ -1,8 +1,11 @@
 //
    Created by pc on 2015/11/24.
-
+//文件上传功能
 extends layout
 
 block content
     title= title
+    form(method='post', action='/file/uploading', enctype='multipart/form-data')
+        input(name='inputFile', type='file', multiple='mutiple')
+        input(name='btnUp', type='submit',value='上传')
     button.btn.btn-primary.btn-block(type='submit') 发送邮件测试
