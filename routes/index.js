@@ -1,19 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var mongoose=require('mongoose');
 
 //上传
 var multiparty = require('multiparty');
 var util = require('util');
 var fs = require('fs');
 
+//加密
 var bcrypt = require('bcrypt-nodejs');
-var dbInfo = require('../config').dbInfo;
-mongoose.connect(dbInfo.url);
-
 //发送邮件
 var nodemailer = require("nodemailer");
 
+//数据库操作
+var mongoose = require('mongoose');
+var dbInfo = require('../config').dbInfo;
+mongoose.connect(dbInfo.url);
 var userModel = require('../model/user');
 var User = userModel.User;
 var messageModel = require('../model/Message');
@@ -44,6 +45,7 @@ router.post('/file/uploading', function (req, res) {
         var filesTmp = JSON.stringify(files, null, 2);
 
         if (err) {
+
             console.log('parse error: ' + err);
         } else {
             console.log('parse files: ' + filesTmp);
@@ -51,18 +53,19 @@ router.post('/file/uploading', function (req, res) {
             var uploadedPath = inputFile.path;
             var dstPath = './public/files/' + inputFile.originalFilename;
             //重命名为真实文件名
-            fs.rename(uploadedPath, dstPath, function (err) {
+            /* fs.rename(uploadedPath, dstPath, function (err) {
                 if (err) {
                     console.log('rename error: ' + err);
                 } else {
                     console.log('rename ok');
                 }
-            });
+             });*/
         }
+        //这个地方可以处理opencv的图像处理文件。
 
         res.writeHead(200, {'content-type': 'text/plain;charset=utf-8'});
-        res.write('received upload:\n\n');
-        res.end(util.inspect({fields: fields, files: filesTmp}));
+        res.write('您');
+        res.end('上传成功');
     });
 
 
@@ -71,7 +74,7 @@ router.post('/file/uploading', function (req, res) {
 //2015年12月12日添加发送邮件的功能
 //需要注意的是，nodemailer使用的版本是0.7.1
 router.get('/admin', function (req, res, next) {
-    var transport = nodemailer.createTransport("SMTP", {
+    /*var transport = nodemailer.createTransport("SMTP", {
         service: 'qq',
         auth: {
             user: "nvnv_1988@qq.com",
@@ -93,7 +96,7 @@ router.get('/admin', function (req, res, next) {
         }
         transport.close();
     });
-
+     */
     res.render('admin', {title: '管理界面'});
 });
 

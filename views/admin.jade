@@ -4,8 +4,11 @@
 extends layout
 
 block content
-    title= title
-    form(method='post', action='/file/uploading', enctype='multipart/form-data')
-        input(name='inputFile', type='file', multiple='mutiple')
-        input(name='btnUp', type='submit',value='上传')
-    button.btn.btn-primary.btn-block(type='submit') 发送邮件测试
+    link(rel='stylesheet', href='/stylesheets/upload.css')
+    #post-container.container
+        .page-containerF
+            h1#demo Step1
+            p 您可以尝试文件拖拽，使用QQ截屏工具，然后激活窗口后粘贴，或者点击添加图片按钮，来体验此demo.
+            form(method='post', action='/file/uploading', enctype='multipart/form-data')
+                input(name='inputFile',type='file', multiple='mutiple')
+                button.btn.btn-success(type='submit') 开始上传

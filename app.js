@@ -12,7 +12,6 @@ var MongoStore = require('connect-mongo')(session);
 
 
 var settings = require('./config').dbInfo;
-var flash = require('connect-flash');
 
 //加载路由模块
 var routes = require('./routes/index');
@@ -36,7 +35,7 @@ app.use(cookieParser());
 //session功能
 app.use(session({
       resave: false,
-      saveUninitialized: true,
+        saveUninitialized: false,
       secret: settings.COOKIE_SECRET,
       store: new MongoStore({   //创建新的mongodb数据库
         url: settings.url,
@@ -51,10 +50,6 @@ app.use(function (req, res, next) {
   console.log('Session is = ', req.session.user);
   next();
 });
-
-
-//添加跳转功能
-app.use(flash());
 
 
 //指定静态资源加载路径

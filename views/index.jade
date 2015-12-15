@@ -6,9 +6,32 @@ block content
     script(src='//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js')
 
     div.container-fluid
-        nav.navbar.navbar-inverse.navbar-fixed-top(id='mynavbar')
+        nav.navbar.navbar-inverse.navbar-fixed-top.navbar-right(id='mynavbar')
             div.navbar-header
                 a.navbar-brand 北斗分理级服务平台
+            collapse.navbar-collapse(id='navbar')
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(data-toggle="modal" data-target="#login") 登陆
+                    li
+                        a(data-toggle="modal" data-target="#reg") 注册
+
+    #login.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true')
+                        | ×
+                    h4#myModalLabel.modal-title
+                        | 模态框（Modal）标题
+                .modal-body
+                    | 在这里添加一些文本
+                .modal-footer
+                    button.btn.btn-default(type='button', data-dismiss='modal')
+                        | 关闭
+                    button.btn.btn-primary(type='button')
+                        | 提交更改
+
 
     div(id='shensuo')
     div.left(id='left')
