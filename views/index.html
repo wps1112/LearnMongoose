@@ -4,36 +4,62 @@
     <title></title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <!--引用bootstrap.js的时候需要先引入jquery。-->
     <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=1hZ5gqOxBT8B5clwusZqwsO5"></script>
   </head>
   <body>
     <script type="text/javascript" src="/js/lbs.js"></script>
     <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
-    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <div class="container-fluid">
-      <nav id="mynavbar" class="navbar navbar-inverse navbar-fixed-top navbar-right">
-        <div class="navbar-header"><a class="navbar-brand">北斗分理级服务平台</a></div>
-        <collapse id="navbar" class="navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a data-toggle="modal" data-target="#login">登陆</a></li>
-            <li><a data-toggle="modal" data-target="#reg">注册</a></li>
-          </ul>
-        </collapse>
-      </nav>
-    </div>
-    <div id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+      <!-- Brand and toggle get grouped for better mobile display-->
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">河南北斗分理服务平台</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling-->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" data-toggle="modal" data-target="#myModal">登陆</a></li>
+          <li><a href="#">登陆</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse-->
+    </nav>
+    <!-- 模态框（Modal）-->
+    <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-            <h4 id="myModalLabel" class="modal-title">模态框（Modal）标题</h4>
-          </div>
-          <div class="modal-body">在这里添加一些文本</div>
-          <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn-default">关闭</button>
-            <button type="button" class="btn btn-primary">提交更改</button>
+          <div class="modal-body">
+            <div id="loginContainer" class="container">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">登陆</div>
+                    <div class="panel-body">
+                      <form method="post" class="form-signin">
+                        <h2 class="form-signin-heading">
+                          <label for="useremail" class="sr-only">Email address</label>
+                          <input id="useremail" type="email" name="useremail" placeholder="Email address" required="" autofocus="" class="form-control">
+                          <label for="userpassword" class="sr-only">Password</label>
+                          <input id="userpassword" type="password" name="userpassword" placeholder="Password" required="" class="form-control">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" value="remember-pswd">记住密码
+                            </label>
+                            <label class="pull-right">
+                              <input type="checkbox" value="auto-login">自动登陆
+                            </label>
+                          </div>
+                          <button type="submit" class="btn btn-primary btn-block">登陆</button>
+                        </h2>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -94,7 +120,7 @@
       </div>
       <script>
         $(function () {
-          $("#accordion").accordion();
+            $("#accordion").accordion();
         });
       </script>
     </div>

@@ -5,12 +5,11 @@ html
 
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet',href='/stylesheets/bootstrap.min.css')
-
-
+    //引用bootstrap.js的时候需要先引入jquery。
     script(type="text/javascript",src="/js/jquery.min.js")
+    script(type="text/javascript",src="/js/bootstrap.min.js")
+
     script(type="text/javascript",src="http://api.map.baidu.com/api?v=2.0&ak=1hZ5gqOxBT8B5clwusZqwsO5")
 
-
   body
-
     block content
