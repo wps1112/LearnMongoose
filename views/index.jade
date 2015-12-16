@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    script(type='text/javascript',src='/js/lbs.js')
+
     link(rel='stylesheet', href='//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css')
     script(src='//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js')
 
@@ -18,12 +18,12 @@ block content
         .collapse.navbar-collapse.navbar-ex1-collapse
             ul.nav.navbar-nav.navbar-right
                 li
-                    a(href='#', data-toggle='modal', data-target='#myModal') 登陆
+                    a(href='#', data-toggle='modal', data-target='#login') 登陆
                 li
-                    a(href='#') 登陆
+                    a(href='#', data-toggle='modal', data-target='#reg') 注册
         // /.navbar-collapse
     // 模态框（Modal）
-    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    #login.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
         .modal-dialog
             .modal-content
                 .modal-body
@@ -33,7 +33,7 @@ block content
                                 div.panel.panel-info
                                     div.panel-heading 登陆
                                     div.panel-body
-                                        form.form-signin(method='post')
+                                        form.form-signin(method='post' action='Login')
                                             h2.form-signin-heading
                                                 label.sr-only(for='useremail') Email address
                                                 input#useremail.form-control(type='email',name='useremail',placeholder='Email address', required='', autofocus='')
@@ -47,6 +47,26 @@ block content
                                                         input(type='checkbox', value='auto-login')
                                                         | 自动登陆
                                                 button.btn.btn-primary.btn-block(type='submit') 登陆
+    #reg.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-dialog
+            .modal-content
+                .modal-body
+                    .container(id='loginContainer')
+                        div.row
+                            div.col-md-4
+                                div.panel.panel-info
+                                    div.panel-heading 注册
+                                    div.panel-body
+                                        form.form-signin(method='post')
+                                            h2.form-signin-heading
+                                                label.sr-only(for='useremail') Email address
+                                                input#useremail.form-control(type='email',name='useremail',placeholder='Email address', required='', autofocus='')
+                                                label.sr-only(for='userpassword') Password
+                                                input#userpassword.form-control(type='password',name='userpassword',placeholder='请输入密码', required='')
+                                                label.sr-only(for='userpassword-repeat') Password
+                                                input#userpassword.form-control(type='password',name='userpassword-repeat',placeholder='再次输入密码确认', required='')
+
+                                                button.btn.btn-primary.btn-block(type='submit') 注册
 
     div(id='shensuo')
     div.left(id='left')
@@ -97,3 +117,4 @@ block content
             });
     div.right(id = 'right')
         div(id = 'allmap')
+    script(type='text/javascript',src='/js/lbs.js')

@@ -73,7 +73,7 @@ router.post('/file/uploading', function (req, res) {
 
 //2015年12月12日添加发送邮件的功能
 //需要注意的是，nodemailer使用的版本是0.7.1
-router.get('/admin', function (req, res, next) {
+router.get('/User', function (req, res, next) {
     /*var transport = nodemailer.createTransport("SMTP", {
         service: 'qq',
         auth: {
@@ -97,7 +97,7 @@ router.get('/admin', function (req, res, next) {
         transport.close();
     });
      */
-    res.render('admin', {title: '管理界面'});
+    res.render('User', {title: '管理界面'});
 });
 
 
@@ -107,10 +107,11 @@ router.post('/Login', function (req, res) {
         password: '123456'
     }
     if (req.body.useremail === user.username && req.body.userpassword === user.password) {
+        console.log('enter login');
         req.session.user = user;
-        res.redirect('/');
+        res.redirect('/User');
     }
-    res.redirect('/Login');
+    res.redirect('/');
 
 });
 
